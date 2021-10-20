@@ -2,4 +2,36 @@
 
 {% block container %}
 
+<div>
+
+
+<div id="cardProdutos" class="card text-white bg-dark mb-3; teste">
+  <div class="card-header; formatacao">Estoque</div>
+  <div class="card-body">
+    <h5 class="card-title">Produtos</h5>
+    <p class="card-text"></p>
+  </div>
+  </div>
+
+
+<div id="cardEntradaSaida"  class="card text-white bg-dark mb-3; teste">
+  <div class="card-header; formatacao">Estoque</div>
+  <div class="card-body">
+    <h5 class="card-title">Entrada/Saida</h5>
+    <p class="card-text"></p>
+  </div>
+  </div>
+
+</div>
+
+<script>
+    document.getElementById("cardProdutos").onclick = function(){
+        window.location.href = "{% url 'produtos' %}";
+    };
+
+    document.getElementById("cardEntradaSaida").onclick = function(){
+        window.location.href = "{% url 'entrada-saida' %}";
+    };
+</script>
+
 {% endblock container %}

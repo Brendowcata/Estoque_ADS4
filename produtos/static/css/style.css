@@ -1,0 +1,17 @@
+.teste{
+    margin: 100px 0 0 400px; 
+    float: left;
+    width: 300px;
+    height: 300px;
+    border-radius: 30px;
+    -webkit-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+		-moz-box-shadow:    9px 7px 5px rgba(50, 50, 50, 0.77);
+		box-shadow:         9px 7px 5px rgba(50, 50, 50, 0.77);
+    cursor: pointer;
+}
+
+.formatacao{
+    font-size: 30px;
+    margin: 10px;
+}
+
