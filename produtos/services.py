@@ -1,4 +1,6 @@
 import uuid
+
+import produtos
 from .models import ProdutoModel
 
 class ProdutoService():
@@ -8,3 +10,11 @@ class ProdutoService():
 
     def buscar_produto_por_id(self, id:uuid) -> ProdutoModel or None:
         return ProdutoModel.objects.filter(id=id).first()
+
+    def deletar_por_id(self, id:uuid) -> None:
+        return ProdutoModel.objects.filter(id=id).delete()
+
+    def editar_contato(produto:produtos, post:dict) -> None:
+        produto.nome = post['nome']
+        produto.codigo = post['codigo']
+        produto.save()
