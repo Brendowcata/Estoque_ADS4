@@ -14,7 +14,11 @@ class ProdutoService():
     def deletar_por_id(self, id:uuid) -> None:
         return ProdutoModel.objects.filter(id=id).delete()
 
-    def editar_contato(produto:produtos, post:dict) -> None:
-        produto.nome = post['nome']
-        produto.codigo = post['codigo']
-        produto.save()
+    def editar_produto(self, produto:ProdutoModel, data:dict):
+        produto.nome = data.get('nome')
+        produto.codigo =  data.get('codigo')
+        try:
+            produto.save()
+            return None
+        except Exception as e:
+            return e.args
