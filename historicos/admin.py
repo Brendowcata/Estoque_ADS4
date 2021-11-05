@@ -1,3 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
+from historicos.models import HistoricoModel
+
+admin.site.register(HistoricoModel)
