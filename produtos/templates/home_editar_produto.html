@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block container %}
+
+{% include 'partials/messages.html' %}
+
+<form method="POST" action="{% url 'editar' produtos.id %}">{% csrf_token %}>
+  <div class="form-group">
+    <label for="nome">Nome</label>
+    <input type="text" value="{{produtos.nome}}" name="nome" class="form-control" id="nome" aria-describedby="emailHelp" placeholder="Escreva seu nome">
+  </div>
+
+  <div class="form-group">
+    <label for="codigo">Código</label>
+    <input type="text"  value="{{produtos.codigo}}" name="codigo" class="form-control" id="codigo" placeholder="Escreva seu sobrenome">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+
+{% endblock container %}

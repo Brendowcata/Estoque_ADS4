@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block container %}
+
+{% include 'partials/messages.html' %}
+{% include 'partials/adicionar_historico.html' %}
+
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Código</th>
+      <th scope="col">funcionario</th>
+      <th scope="col">tipo</th>
+      <th scope="col">descrição</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    {% for historico in historicos %}
+    <tr>
+      <td>{{historico.produto_id}}</td>
+      <td>{{historico.funcionario}}</td>
+      <td>{{historico.tipo}}</td>
+      <td>{{historico.descricao}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<nav aria-label="...">
+  <ul class="pagination">
+    {% for pagina in produtos.paginator.page_range %}
+
+    {% if produtos.number == pagina %}
+    <li class="page-item active"><a class="page-link" href="?p={{pagina}}&termo={{request.GET.termo}}">{{pagina}}</a>
+    </li>
+    {% else %}
+    <li class="page-item"><a class="page-link" href="?p={{pagina}}&termo={{request.GET.termo}}">{{pagina}}</a></li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+</nav>
+
+
+{% endblock container %}

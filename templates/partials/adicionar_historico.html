@@ -1,0 +1,48 @@
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#change-password">
+  Adicionar
+</button>
+
+<div id="change-password" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form method="POST" action="{% url 'historico' %}">{% csrf_token %}
+      <div class="modal-body">
+        <div class="form-group">
+            <label for="nome">Código</label>
+            <select name="produto_id" id="produto_id"> 
+        {% for produto in produtos %} 
+              <option value="{{ produto.codigo }}">{{ produto.codigo }}</option>
+        {% endfor %}
+
+        </select>
+        </div>
+
+        <div class="form-group">
+            <label for="codigo">Funcionario</label>
+            <input type="text"  value="{{historico.funcionario}}" name="funcionario" class="form-control" id="codigo" >
+        </div>
+
+        <div class="form-group">
+            <label for="codigo">Tipo</label>
+            <input type="text"  value="{{historico.tipo}}" name="tipo" class="form-control" id="codigo" >
+        </div>
+
+        <div class="form-group">
+            <label for="codigo">Descrição</label>
+            <input type="text"  value="{{historico.descricao}}" name="descricao" class="form-control" id="codigo" >
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Adicionar</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div> 
