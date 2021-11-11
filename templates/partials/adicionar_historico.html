@@ -15,9 +15,9 @@
       <div class="modal-body">
         <div class="form-group">
             <label for="nome">Código</label>
-            <select name="produto_id" id="produto_id"> 
+            <select name="produto_id"> 
         {% for produto in produtos %} 
-              <option value="{{ produto.codigo }}">{{ produto.codigo }}</option>
+              <option value="{{ produto.id }}">{{ produto.codigo }}</option>
         {% endfor %}
 
         </select>
@@ -36,6 +36,11 @@
         <div class="form-group">
             <label for="codigo">Descrição</label>
             <input type="text"  value="{{historico.descricao}}" name="descricao" class="form-control" id="codigo" >
+        </div>
+
+        <div class="form-group">
+            <label for="quantidade">Quantidade</label>
+            <input type="text"  value="{{historico.quantidade}}" name="quantidade" class="form-control" id="codigo" >
         </div>
       </div>
 

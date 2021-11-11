@@ -27,6 +27,9 @@ class HistoricoModel(TimeStampedModel):
 
      descricao = models.TextField(default=None)
 
+     quantidade = models.PositiveSmallIntegerField()
+
+
      def __str__(self) -> str:
          return f"{self.id}"
      
